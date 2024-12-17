@@ -1,0 +1,26 @@
+.contact {
+  display: flex;
+  gap: 15px;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 7px;
+  min-width: 250px;
+  align-items: center;
+}
+
+.contact__both {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+.contact__name,
+.contact__number {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.contact__btn {
+  max-height: 30px;
+}
