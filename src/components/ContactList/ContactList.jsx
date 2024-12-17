@@ -6,8 +6,13 @@ import { selectFilteredContacts } from "../../redux/contactsSlice";
 const ContactList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
 
-  if (!filteredContacts || filteredContacts.length === 0) {
-    return <p>No contacts available</p>;
+  const isLoading = useSelector(selectIsLoading);
+
+  if (
+    (!filteredContacts && !isLoading) ||
+    (filteredContacts.length === 0 && !isLoading)
+  ) {
+    return <p>Contacts don't available</p>;
   }
 
   return (

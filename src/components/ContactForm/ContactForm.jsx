@@ -16,8 +16,14 @@ const ContactForm = () => {
         name: values.name,
         tel: values.tel,
       })
-    );
-    resetForm();
+    )
+      .unwrap()
+      .then(() => {
+        resetForm();
+      })
+      .catch((event) => {
+        console.log(event.message);
+      });
   };
 
   const contactSchema = Yup.object().shape({

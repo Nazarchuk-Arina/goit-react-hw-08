@@ -7,7 +7,7 @@ import { deleteContact } from "../../redux/contactsOps";
 const Contact = ({ contact }) => {
   const dispatch = useDispatch();
 
-  const handleDelete = () => dispatch(deleteContact(contact.id));
+  const handleDelete = () => dispatch(deleteContact(contact.id)).unwrap.then();
 
   return (
     <div className={s.contact}>
