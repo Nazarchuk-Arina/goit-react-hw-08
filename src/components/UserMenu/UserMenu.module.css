@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.username {
+  color: #489530;
+  font-weight: 900;
+}
+
+.logoutButton {
+  width: 100px;
+  padding: 3px;
+  border: 2px #489530 solid;
+  border-radius: 4px;
+  font-size: 15px;
+}

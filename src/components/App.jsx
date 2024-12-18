@@ -28,7 +28,7 @@ function App() {
       <Loader />
     </Layout>
   ) : (
-    <Layout>
+    <Layout className="container">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route

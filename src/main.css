@@ -26,9 +26,5 @@ img {
 }
 
 .container {
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
+  margin: 0 auto;
 }

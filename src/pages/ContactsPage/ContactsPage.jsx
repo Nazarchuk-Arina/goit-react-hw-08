@@ -16,12 +16,12 @@ export default function ContactsPage() {
   }, [dispatch]);
 
   return (
-    <>
+    <div className="container">
       <ContactForm />
       <SearchBox />
 
       <ContactList />
       <div>{isLoading && <Loader />}</div>
-    </>
+    </div>
   );
 }

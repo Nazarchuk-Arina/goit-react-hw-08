@@ -6,16 +6,14 @@ import * as Yup from "yup";
 import { nanoid } from "nanoid";
 // import { addContact } from "../../redux/contactsOps";
 import { addContact } from "../../redux/contacts/operations";
-
 const ContactForm = () => {
   const dispatch = useDispatch();
-
   const handleSubmit = (values, { resetForm }) => {
     dispatch(
       addContact({
         id: nanoid(),
         name: values.name,
-        tel: values.tel,
+        number: values.number,
       })
     )
       .unwrap()
@@ -26,15 +24,12 @@ const ContactForm = () => {
         console.log(event.message);
       });
   };
-
   const contactSchema = Yup.object().shape({
     name: Yup.string().min(3).max(50).required(),
-    tel: Yup.string().min(3).max(50).required(),
+    number: Yup.string().min(3).max(50).required(),
   });
-
   const nameFieldId = useId();
   const telFieldId = useId();
-
   return (
     <div className={s.wrapper}>
       <Formik
@@ -50,8 +45,8 @@ const ContactForm = () => {
           </label>
           <label className={s.label}>
             <span>Number</span>
-            <Field name="tel" className={s.input} id={telFieldId} />
-            <ErrorMessage name="tel" component="span" className={s.error} />
+            <Field name="number" className={s.input} id={telFieldId} />
+            <ErrorMessage name="number" component="span" className={s.error} />
           </label>
           <button className={s.btn} type="submit">
             Add contact
@@ -61,5 +56,4 @@ const ContactForm = () => {
     </div>
   );
 };
-
 export default ContactForm;
